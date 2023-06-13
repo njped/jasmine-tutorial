@@ -7,6 +7,13 @@ describe("Player", () => {
     song = new Song();
   });
 
+  describe('play', () => {
+    it('should play', () => {
+      player.play(song)
+      expect(player).toBePlaying(song)
+    })
+  })
+
   describe('makeFavorite', () => {
     it('should persist as a favorite song', () => {
       spyOn(song, 'persistFavoriteStatus')
